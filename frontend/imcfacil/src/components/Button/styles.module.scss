@@ -1,0 +1,40 @@
+.button {
+  max-width: 600px;
+  background-color: #D1E02F;
+  padding: 10px 5px;
+  border-radius: 5px;
+  color: #01372F;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 10px;
+
+  &[disabled]{
+    svg{
+      animation: animate 2s infinite;
+      font-weight: 600;
+      color: #01372F;
+    }
+  }
+  
+  &:hover {
+    filter: brightness(1.40);
+  }
+}
+
+.alink {
+  color: #01372F;
+}
+.alink::hover {
+  // color: #004138;
+  color: #fff;
+}
+
+@keyframes animate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

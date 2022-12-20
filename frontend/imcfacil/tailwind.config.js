@@ -1,12 +1,18 @@
-/** @type {import('tailwindcss').Config} */
-
 module.exports = {
   content: [
-      "./pages/**/*.{js,ts,jsx,tsx}",
-      "./components/**/*.{js,ts,jsx,tsx}",
+      "./src/pages/**/*.{js,ts,jsx,tsx}",
+      "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        verde: {
+          vs600: '#01372F',
+          vs500 : '#004138',
+          vs400: '#D1E02F',
+        },
+       },
+    },
   },
   plugins: [],
 }
