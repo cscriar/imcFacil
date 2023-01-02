@@ -5,8 +5,6 @@ import { Input } from '../../components/Input'
 import Nav from '../../components/Nav'
 
 export default function Home() {
-
-  
   return (
     <div>
       <Nav />
