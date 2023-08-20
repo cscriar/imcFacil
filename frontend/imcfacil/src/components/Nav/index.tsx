@@ -1,13 +1,12 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import logoX from '../../../public/bmi.png'
 import perfilTopo from '../../../public/perfilTopo.png'
 import Image from 'next/image'
 
 const navigation = [
   { name: 'Perfil', href: '/perfil', current: true },
-  { name: 'Calculadora', href: '/imc', current: false }  
+  { name: 'Calculadora', href: '/imc', current: false }
 ]
 
 function classNames(...classes) {
@@ -36,12 +35,16 @@ export default function Nav() {
                 <div className="flex flex-shrink-0 items-center">
                   <Image
                     className="block h-8 w-auto lg:hidden"
-                    src={logoX}
+                    src="/bmi.png"
+                    width={150}
+                    height={150}
                     alt="Imc Fácil"
                   />
                   <Image
                     className="hidden h-8 w-auto lg:block"
-                    src={logoX}
+                    src="/bmi.png"
+                    width={150}
+                    height={150}
                     alt="Imc Fácil"
                   />
                 </div>
@@ -64,7 +67,7 @@ export default function Nav() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-               {/* Profile dropdown */}
+                {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
