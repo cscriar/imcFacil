@@ -1,19 +1,20 @@
-// pages/index.js
-
 import React, { useState } from 'react';
+import { useRouter } from 'next/router'; 
 import Head from 'next/head';
-import styles from '../../styles/Home.module.scss';
 import { Button } from '../components/Button';
 import { Input } from '../components/Input';
 import Nav from '../components/Nav';
+import styles from '../../styles/Home.module.scss';
 
 export default function Home() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  const handleCadastro = async (event) => {
-    event.preventDefault();
+  const router = useRouter(); 
+
+  const handleCadastro = async (e) => {
+    e.preventDefault();
 
     const novoUsuario = {
       nome,
@@ -31,8 +32,8 @@ export default function Home() {
       });
 
       if (response.ok) {
-        console.log('Usuário cadastrado com sucesso!');
-        // Aqui você pode adicionar lógica para redirecionar o usuário para outra página, se necessário.
+        alert('Usuário cadastrado com sucesso!')
+        router.push('/perfil');
       } else {
         console.error('Erro ao cadastrar usuário.');
       }

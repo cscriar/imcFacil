@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
+import { useRouter } from 'next/router';
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import perfilTopo from '../../../public/perfilTopo.png'
 import Image from 'next/image'
 
@@ -14,6 +15,17 @@ function classNames(...classes) {
 }
 
 export default function Nav() {
+  const router = useRouter();
+
+// Função para fazer logout
+const handleLogout = () => {
+  // Remova o token do armazenamento local
+  localStorage.removeItem('token');
+
+  // Redirecione o usuário para a página de login ou qualquer outra página desejada após o logout
+  router.push('/');
+};
+
   return (
     <Disclosure as="nav" className="bg-verde-vs400">
       {({ open }) => (
@@ -23,7 +35,7 @@ export default function Nav() {
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-verde-vs600 hover:bg-verde-vs500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-offset-verde-vs400">
-                  <span className="sr-only">Open main menu</span>
+                  <span className="sr-only"> Open main menu </span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
@@ -92,7 +104,7 @@ export default function Nav() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="/"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Perfil
@@ -102,7 +114,7 @@ export default function Nav() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="/imc"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             IMC
@@ -112,10 +124,20 @@ export default function Nav() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="/"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Login
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="/"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                          >
+                            <button onClick={handleLogout}> Sair </button>
                           </a>
                         )}
                       </Menu.Item>
@@ -150,8 +172,3 @@ export default function Nav() {
   )
 }
 
-// export default function Nav() {
-//   return(
-//     <div>Teste</div>
-//   )
-// }

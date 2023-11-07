@@ -2,11 +2,38 @@
   {
     "nome": "francisca",
     "email": "fran@mail.com",
-    "senha": "tes123"
+    "senha": "tes123",
+    "imc": 19
   },
   {
     "nome": "Linda",
     "email": "linda@mail.com",
+    "senha": "123456",
+    "imc": 29
+  },
+  {
+    "nome": "Aline",
+    "email": "aline@mail.com",
     "senha": "123456"
+  },
+  {
+    "nome": "Joana",
+    "email": "joana@mail.com",
+    "senha": "123456"
+  },
+  {
+    "nome": "Pedro",
+    "email": "pedro@mail.com",
+    "senha": "123456"
+  },
+  {
+    "nome": "Alice",
+    "email": "alice@mail.com",
+    "senha": "123456"
+  },
+  {
+    "nome": "Olga",
+    "email": "olga@mail.com",
+    "senha": "321654"
   }
 ]
